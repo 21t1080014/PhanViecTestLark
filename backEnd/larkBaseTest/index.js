@@ -13,7 +13,8 @@ app.use(express.json());
 
 // Mở một "cổng API" để Lark Base bắn tín hiệu (Webhook) vào đây
 app.post("/api/webhook/lark", scheduleController.handleLarkWebhook);
-
+app.put("/api/webhook/lark", scheduleController.handleLarkUpdate); // Cập nhật
+app.delete("/api/webhook/lark", scheduleController.handleLarkDelete); // Xóa
 // ----------------------------------------------------
 // KHỞI ĐỘNG SERVER
 // ----------------------------------------------------
